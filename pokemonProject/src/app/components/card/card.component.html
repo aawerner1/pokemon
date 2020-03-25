@@ -1,0 +1,35 @@
+
+<div class="card__group">
+	<div *ngFor="let pokemon of pokemons">
+		<div class="card--pokemon" [ngClass]="{'card__load': !pokemon.image}">
+			<div *ngIf="pokemon.image">
+				<div class="card__header">
+					<h2 class="card__header--title">{{pokemon.name}}<small class="card__header--id">#{{pokemon.id}}</small> </h2>
+					<i class="card__header--icon far fa-heart" *ngIf="!pokemon.isFavorite" (click)="favoritePokemon(pokemon)"></i>
+					<i class="card__header--icon active fas fa-heart" *ngIf="pokemon.isFavorite" (click)="favoritePokemon(pokemon)"></i>
+				</div>
+
+				<div class="card__info">
+					<p>{{pokemon.weight}}</p>
+					<small>Weight</small>
+				</div>
+
+				<div class="card__info">
+					<p>{{pokemon.height}}</p>
+					<small>Height</small>
+				</div>
+
+				<div class="card__info">
+					<p>{{pokemon.base_experience}}</p>
+					<small>Base Experience</small>
+				</div>
+
+				<div class="card_img_shadow"></div>
+				<img class="card__img" [src]="pokemon.image" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<button class="btn btn-primary btn-lg btn-dark d-block mx-auto mt-3" (click)="loadMore()">Load More</button>

@@ -1,0 +1,13 @@
+.mark {
+	opacity: 0.020;
+	width: 70vh;
+	position: fixed;
+	right: -190px;
+	top: -150px;
+}
+
+@media (max-width: 576px) {
+	h1 {
+		font-size: 1.5rem;
+	}
+}
