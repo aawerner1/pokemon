@@ -11,6 +11,7 @@ export class CardComponent {
 
 	pokemons = [];
 	offset: number = 0;
+	showLoadMore: boolean = false;
 
   	constructor(private service: HttpService) {
 		this.getAPI()
@@ -24,7 +25,8 @@ export class CardComponent {
 	getAPI() {
 		this.service.getPokemons(this.offset)
 		.then( result =>  {
-			this.pokemons.push.apply(this.pokemons, result)
+			this.pokemons.push.apply(this.pokemons, result);
+			this.showLoadMore = true
 		});
 	}
 
