@@ -3,9 +3,9 @@
 		<div class="card--pokemon" [ngClass]="{'card__load': !pokemon.image}">
 			<div *ngIf="pokemon.image">
 				<div class="card__header">
-					<h2 class="card__header--title">{{pokemon.name}}<small class="card__header--id">#{{pokemon.id}}</small> </h2>
-					<i class="card__header--icon far fa-heart" *ngIf="!pokemon.isFavorite" (click)="favoritePokemon(pokemon)"></i>
-					<i class="card__header--icon active fas fa-heart" *ngIf="pokemon.isFavorite" (click)="favoritePokemon(pokemon)"></i>
+					<h2 class="card__header--title">{{pokemon.name}}</h2>
+					<i class="btn__icon far fa-heart" *ngIf="!pokemon.isFavorite" (click)="favoritePokemon(pokemon)"></i>
+					<i class="btn__icon active fas fa-heart" *ngIf="pokemon.isFavorite" (click)="favoritePokemon(pokemon)"></i>
 				</div>
 
 				<div class="card__info">
@@ -24,11 +24,11 @@
 				</div>
 
 				<div class="card_img_shadow"></div>
-				<img class="card__img" [src]="pokemon.image" alt="">
+				<img class="card__img" [src]="pokemon.image" alt="Pokemon Image">
 			</div>
 		</div>
 	</div>
 </div>
 
 
-<button class="btn btn-primary btn-lg btn-dark d-block mx-auto my-3" *ngIf="showLoadMore" (click)="loadMore()">Load More</button>
+<button class="btn btn-primary btn-lg mx-auto my-3" *ngIf="showLoadMore" (click)="loadMore()">Load More</button>

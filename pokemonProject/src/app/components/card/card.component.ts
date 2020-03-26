@@ -14,15 +14,15 @@ export class CardComponent {
 	showLoadMore: boolean = false;
 
   	constructor(private service: HttpService) {
-		this.getAPI()
+		this.getPokemons()
 	}
 
 	loadMore() {
 		this.offset += environment.pageLimit;
-		this.getAPI()
+		this.getPokemons()
 	}
 
-	getAPI() {
+	getPokemons() {
 		this.service.getPokemons(this.offset)
 		.then( result =>  {
 			this.pokemons.push.apply(this.pokemons, result);

@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'assets/scss/_all.scss';
+
 body {
 	font-family: 'Helvetica';
 	color: #333;
 	background-color: #f1f1f1;
+	padding: 20px;
 }

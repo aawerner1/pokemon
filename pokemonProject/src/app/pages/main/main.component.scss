@@ -1,0 +1,9 @@
+header img {
+	padding-bottom: 20px;
+	width: 300px;
+	background-image: url();
+
+	@media (max-width: 576px) {
+		width: 200px;
+	}
+}

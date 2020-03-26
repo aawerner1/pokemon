@@ -11,8 +11,6 @@ export class HttpService {
 
 	constructor(private http: HttpClient) { }
 
-	limit = environment.pageLimit
-
 	getPokemon(url) {
 		return this.http.get(url)
 		.pipe(
@@ -32,7 +30,7 @@ export class HttpService {
 	}
 
 	getPokemons(offset) {
-		return this.http.get(`http://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${this.limit}`)
+		return this.http.get(`http://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${environment.pageLimit}`)
 		.pipe(
 			map(res => {
 				res['results'].forEach((element) => {
