@@ -1,32 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpService } from 'src/app/services/http/http.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
 
-	pokemons;
-	loadedPokemons: number = 0;
-	pokemonsToLoad: number = 3;
+	pokemons = [];
+	offset: number = 0;
 
   	constructor(private service: HttpService) {
-		this.service.getPokemons(this.loadedPokemons, this.pokemonsToLoad)
-		.then( result => {
-			this.pokemons = result;
-		})
-	}
-
-	ngOnInit() {
+		this.getAPI()
 	}
 
 	loadMore() {
-		this.loadedPokemons = this.pokemonsToLoad;
-		this.pokemonsToLoad = this.loadedPokemons + 3;
-		console.log(this.loadedPokemons + '/' + this.pokemonsToLoad);
-		this.service.getPokemons(this.loadedPokemons, this.pokemonsToLoad).then( result => console.log(result));
+		this.offset += environment.pageLimit;
+		this.getAPI()
+	}
+
+	getAPI() {
+		this.service.getPokemons(this.offset)
+		.then( result =>  {
+			this.pokemons.push.apply(this.pokemons, result)
+		});
 	}
 
 
