@@ -7,3 +7,9 @@ body {
 	background-color: #f1f1f1;
 	padding: 20px;
 }
+
+@media (max-width: 576px) {
+	body {
+		padding: 0;
+	}
+}
