@@ -21,7 +21,7 @@
 	&:hover {
 		box-shadow: -1px 1px 11px 0 rgba(3, 3, 3, 0.18);
 
-		&:hover {
+		.card__img:hover {
 			filter: contrast(100%);
 		}
 	}
