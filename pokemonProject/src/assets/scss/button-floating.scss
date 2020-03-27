@@ -1,0 +1,34 @@
+.btn__floating {
+	cursor: pointer;
+    color: white;
+    background-color: #385faa;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px 4px rgba(3, 3, 3, 0.18);
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+	font-size: 26px;
+	z-index: 100;
+
+	&:hover {
+		background-color: #1e4590;
+	}
+
+	i {
+		animation: up-down .5s alternate infinite;
+	}
+}
+
+@keyframes up-down {
+	0% {
+		margin-top: 3px;
+	}
+	100% {
+		margin-bottom: 2px;
+	}
+}

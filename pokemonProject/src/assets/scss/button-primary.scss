@@ -4,4 +4,8 @@
     font-weight: bold;
     border: none;
     background-color: #ffcb05;
+
+    &:hover, &:active, &:focus, &:not(:disabled):not(.disabled):active {
+        background-color: #385faa;
+    }
 }

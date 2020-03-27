@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+  hasScroll: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+    window.onscroll = () => {
+      window.scrollY == 0 ? this.hasScroll = false : this.hasScroll = true;
+    };
+  }
+
+  goToTop() {
+    window.scrollTo(0,0)
+    this.hasScroll = false
   }
 
 }

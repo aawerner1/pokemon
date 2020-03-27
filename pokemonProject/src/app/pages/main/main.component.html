@@ -5,3 +5,7 @@
 <img class="water-mark" src="../assets/images/pokemon-ball.png" alt="PokeBall Image">
 
 <app-card></app-card>
+
+<div class="btn__floating" (click)="goToTop()" *ngIf="hasScroll">
+	<i class=" fas fa-angle-double-up"></i>
+</div>
