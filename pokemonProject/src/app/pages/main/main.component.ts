@@ -19,7 +19,6 @@ export class MainComponent implements OnInit {
 
   goToTop() {
     window.scrollTo(0,0)
-    this.hasScroll = false
   }
 
 }
