@@ -13,7 +13,7 @@
 	margin: 15px;
 	border-radius: 6px;
 	min-width: 250px;
-    height: 200px;
+    min-height: 200px;
 	box-shadow: -1px 1px 5px 0 rgba(3, 3, 3, 0.18);
 	padding: 15px;
 	position: relative;
@@ -41,21 +41,27 @@
 
 	}
 
-	.card__info {
-		margin-bottom: 12px;
-		line-height: 1;
-		color: #717171;
+	.card__info--group {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 
-		& > p {
-			margin: 0;
+		.card__info {
+			margin-bottom: 12px;
+			line-height: 1;
+			color: #717171;
 
-			& > small {
-				font-weight: normal;
+			& > p {
+				margin: 0;
+
+				& > small {
+					font-weight: normal;
+				}
 			}
-		}
 
-		small {
-			font-weight: bold;
+			small {
+				font-weight: bold;
+			}
 		}
 	}
 

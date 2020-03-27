@@ -8,19 +8,21 @@
 					<i class="btn__icon active fas fa-heart" *ngIf="pokemon.isFavorite" (click)="favoritePokemon(pokemon)"></i>
 				</div>
 
-				<div class="card__info">
-					<p>{{pokemon.weight}}</p>
-					<small>Weight</small>
-				</div>
+				<div class="card__info--group">
+					<div class="card__info">
+						<p>{{pokemon.weight}}</p>
+						<small>Weight</small>
+					</div>
 
-				<div class="card__info">
-					<p>{{pokemon.height}}</p>
-					<small>Height</small>
-				</div>
+					<div class="card__info">
+						<p>{{pokemon.height}}</p>
+						<small>Height</small>
+					</div>
 
-				<div class="card__info">
-					<p>{{pokemon.base_experience}}</p>
-					<small>Base Experience</small>
+					<div class="card__info">
+						<p>{{pokemon.base_experience}}</p>
+						<small>Base Experience</small>
+					</div>
 				</div>
 
 				<div class="card_img_shadow"></div>
